@@ -9,12 +9,48 @@ function hideModalForm()
     templateBuilder.clear('login');
 }
 
+function showLoginPanel()
+{
+    const loginPanel = document.getElementById('login-panel');
+    const registerPanel = document.getElementById('register-panel');
+    
+    // Ensure the panels exist before manipulating them
+    if (loginPanel && registerPanel) {
+        registerPanel.classList.add('d-none');    // Hide Register
+        loginPanel.classList.remove('d-none'); // Show Login
+    }
+}
+
+// Function to switch to the Register view
+function showRegisterPanel()
+{
+    const loginPanel = document.getElementById('login-panel');
+    const registerPanel = document.getElementById('register-panel');
+    
+    // Ensure the panels exist before manipulating them
+    if (loginPanel && registerPanel) {
+        loginPanel.classList.add('d-none');    // Hide Login
+        registerPanel.classList.remove('d-none'); // Show Register
+    }
+}
+
 function login()
 {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     userService.login(username, password);
+    hideModalForm()
+}
+
+function register()
+{
+    const username = document.getElementById("reg-username").value;
+    const password = document.getElementById("reg-password").value;
+    const confirmPassword = document.getElementById("reg-confirm-password").value;
+
+    userService.register(username, password,confirmPassword
+    );
     hideModalForm()
 }
 

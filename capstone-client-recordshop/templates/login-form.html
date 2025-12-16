@@ -1,27 +1,63 @@
-<div id="login-form" class="modal">
+<div id="auth-modal" class="modal"> 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >Login</h5>
-        <button type="button" class="btn-close" onclick="hideModalForm()" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="username" placeholder="username">
-          <label for="username">Username</label>
+      
+      <div id="login-panel"> 
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close" onclick="hideModalForm()" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
         </div>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="password" placeholder="password">
-          <label for="password">Password</label>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="username" placeholder="username">
+            <label for="username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div style="padding: 0 1rem 1rem;">
+          Don't have an account? <a href="#" onclick="showRegisterPanel()">Register here</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="hideModalForm()">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="login()">Login</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="hideModalForm()">Cancel</button>
-        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+      
+      <div id="register-panel" class="d-none"> 
+        <div class="modal-header">
+          <h5 class="modal-title">Register</h5>
+          <button type="button" class="btn-close" onclick="hideModalForm()" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="reg-username" placeholder="username">
+            <label for="reg-username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="reg-password" placeholder="password">
+            <label for="reg-password">Password</label>
+          </div>
+                    <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="reg-confirm-password" placeholder="password">
+            <label for="reg-confirm-password">Confirm Password</label>
+          </div>
+        </div>
+        <div style="padding: 0 1rem 1rem;">
+          Already have an account? <a href="#" onclick="showLoginPanel()">Login here</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="hideModalForm()">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+        </div>
       </div>
+      
     </div>
   </div>
-
 </div>
