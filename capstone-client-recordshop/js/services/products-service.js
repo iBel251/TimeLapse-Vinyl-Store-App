@@ -27,7 +27,7 @@ class ProductService {
             }
             if(this.filter.subCategory)
             {
-                const sub = `subCategory=${this.filter.subCategory}`;
+                const sub = `subCategory=${encodeURIComponent(this.filter.subCategory)}`;
                 if(qs.length>0) {   qs += `&${sub}`; }
                 else { qs = sub; }
             }
